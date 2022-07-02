@@ -1,0 +1,13 @@
+.form {
+    composes: form from '../string/string.module.css';
+}
+
+.circle {
+    display: flex;
+    flex-direction: row;
+    margin: 80px auto 0 auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 50px;
+    column-gap: 16px;
+}

@@ -1,5 +1,4 @@
 import {TInputStringArr} from "../components/string/string";
-import {DELAY_IN_MS} from "../constants/delays";
 
 export const swap = (arr: TInputStringArr[], firstIndex: number, secondIndex: number): void => {
     [arr[firstIndex], arr[secondIndex]] = [arr[secondIndex], arr[firstIndex]];
@@ -9,4 +8,16 @@ export const swap = (arr: TInputStringArr[], firstIndex: number, secondIndex: nu
 
 export const pause = (delay:number) => {
     return new Promise(resolve => setTimeout(resolve, delay));
+}
+
+export const fibArr = (n: number, memo: Record<number, number> = {}): number => {
+
+    if (n in memo) {
+        return memo[n];
+    }
+    if (n <= 2) {
+        return 1;
+    }
+    memo[n] = fibArr(n - 1, memo) + fibArr(n - 2, memo);
+    return memo[n];
 }
