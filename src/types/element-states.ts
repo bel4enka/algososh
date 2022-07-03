@@ -3,3 +3,7 @@ export enum ElementStates {
   Changing = "changing",
   Modified = "modified",
 }
+export enum NameSort {
+  Selected = "select",
+  Bubble = "bubble"
+}
