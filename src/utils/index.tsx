@@ -1,7 +1,6 @@
 
-export const swap = (arr: any[], firstIndex: number, secondIndex: number): void => {
+export function swap <T> (arr: Array<T>, firstIndex: number, secondIndex: number): void  {
     [arr[firstIndex], arr[secondIndex]] = [arr[secondIndex], arr[firstIndex]];
-    
 }
 
 export const pause = (delay:number) => {
