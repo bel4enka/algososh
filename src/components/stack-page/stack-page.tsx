@@ -1,4 +1,4 @@
-import React, {SyntheticEvent, useEffect, useState} from "react";
+import React, {useState} from "react";
 import { SolutionLayout } from "../ui/solution-layout/solution-layout";
 import styles from "./styles.module.css";
 import {Input} from "../ui/input/input";
