@@ -8,7 +8,7 @@
         flex-wrap: wrap;
     }
 }
-input {
+.input {
     min-width: 300px;
 }
 .circle {

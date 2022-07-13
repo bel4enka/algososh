@@ -1,6 +1,5 @@
-import {TValueObj} from "./queue-page";
 
-export class Queue<T> {
+export class Queue {
     private readonly container:  string[] = [];
     private head: number = 0;
     private tail: number = 0;

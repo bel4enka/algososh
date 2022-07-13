@@ -70,7 +70,7 @@ export const StackPage: React.FC = () => {
         <Button text="Добавить" 
                 isLoader={startChange === 'addElement'} 
                 onClick={addElement}
-                disabled={startChange === 'addElement'}
+                disabled={inputString === ''}
         />
         <Button text="Удалить" 
                 isLoader={startChange === 'deleteElement'} 

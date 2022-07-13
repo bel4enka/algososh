@@ -76,7 +76,11 @@ export const StringComponent: React.FC = () => {
                 isLimitText={true} 
                 maxLength={11} 
             />
-            <Button text="Развернуть" type="submit" isLoader={startMove}/>
+            <Button text="Развернуть" 
+                    type="submit" 
+                    isLoader={startMove}
+                    disabled={inputString === ''}
+            />
         </form>
         <div className={styles.circle}>
             {arr.map((item, i) => {

@@ -42,7 +42,7 @@ export const FibonacciPage: React.FC = () => {
             type="number"
             max={19}
         />
-        <Button text="Рассчитать" type="submit" isLoader={startShow}/>
+        <Button text="Рассчитать" type="submit" isLoader={startShow} disabled={inputString < 0}/>
       </form>
       <div className={styles.circle}>
         {arr.map((item, i) => {

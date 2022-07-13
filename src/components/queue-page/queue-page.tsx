@@ -9,7 +9,7 @@ import {Button} from "../ui/button/button";
 import {Circle} from "../ui/circle/circle";
 import {Queue} from "./queue";
 
-const queue = new Queue<number>(7)
+const queue = new Queue(7)
 
 export type TValueObj = {
   name: string
@@ -19,7 +19,6 @@ export type TValueObj = {
 }
 
 export const QueuePage: React.FC = () => {
-  
   const initialArr: TValueObj[] = Array.from(
     { length: 7 },
     () => ({
@@ -119,7 +118,7 @@ export const QueuePage: React.FC = () => {
             return <Circle key={i}
                            letter={item.name}
                            index={i}
-                           head={item.head ? 'top' : ''}
+                           head={item.head ? 'head' : ''}
                            tail={item.tail ? 'tail' : ''}
                            state={item.status} /> })}
         </div>
