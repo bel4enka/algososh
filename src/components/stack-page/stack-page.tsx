@@ -76,12 +76,12 @@ export const StackPage: React.FC = () => {
                 isLoader={startChange === 'deleteElement'} 
                 extraClass='mr-16' 
                 onClick={deleteElement}
-                disabled={!(stack.getSize() > 0)}
+                disabled={!(stack.getSize() > 0) || startChange === 'addElement' || startChange === 'deleteAll'}
         />
         <Button text="Очистить" 
                 isLoader={startChange === 'deleteAll'} 
                 onClick={() => deleteAll()}
-                disabled={!(stack.getSize() > 0)}
+                disabled={!(stack.getSize() > 0) || startChange === 'addElement' || startChange === 'deleteElement'}
         />
       </form>
       <div className={styles.circle}>

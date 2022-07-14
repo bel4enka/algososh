@@ -105,12 +105,12 @@ export const QueuePage: React.FC = () => {
                   isLoader={startChange === 'deleteElement'}
                   extraClass='mr-16'
                   onClick={deleteElement}
-                  disabled={queue.getHead() === 9}
+                  disabled={queue.getHead() === 9 || startChange === 'addElement' || startChange === 'deleteAll'}
           />
           <Button text="Очистить"
                   isLoader={startChange === 'deleteAll'}
                   onClick={() => deleteAll()}
-                  disabled={queue.getHead() === 9}
+                  disabled={queue.getHead() === 9 || startChange === 'addElement' || startChange === 'deleteElement'}
           />
         </form>
         <div className={styles.circle}>

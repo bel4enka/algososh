@@ -147,18 +147,23 @@ export const SortingPage: React.FC = () => {
         />
         <Button 
             text="По возрастанию" 
-            isLoader={ascending} 
+            isLoader={ascending}
+            disabled={descending}
             sorting={Direction.Ascending} 
             extraClass='ml-16' 
             onClick={()=> nameSort === NameSort.Bubble ? bubbleSort("ascending") : selectSort("ascending")}/>
         <Button 
             text="По убыванию" 
-            isLoader={descending} 
+            isLoader={descending}
+            disabled={ascending}
             sorting={Direction.Descending} 
             extraClass='mr-16'
             onClick={()=> nameSort === NameSort.Bubble ? bubbleSort("descending") : selectSort("descending")}
         />
-        <Button text="Новый массив" isLoader={startShow} extraClass='ml-16' onClick={createNewObj}/>
+        <Button text="Новый массив" 
+                disabled={ascending || descending} 
+                extraClass='ml-16' 
+                onClick={createNewObj}/>
       </form>
       <div className={styles.column}>
         {arr.map((item, i) => {
