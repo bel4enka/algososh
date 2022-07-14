@@ -1,0 +1,18 @@
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.column {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    align-content: flex-start;
+    gap: 10px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
