@@ -1,0 +1,22 @@
+.form {
+    composes: form from '../string/string.module.css';
+    justify-content: center;
+}
+
+@media (max-width: 900px) {
+    .form {
+        flex-wrap: wrap;
+    }
+}
+.input {
+    min-width: 300px;
+}
+.circle {
+    display: flex;
+    flex-direction: row;
+    margin: 80px auto 0 auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 70px;
+    column-gap: 16px;
+}

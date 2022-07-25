@@ -12,12 +12,15 @@
 
 .default {
   background-color: var(--default-color);
+  transition: 1s ease-out;
 }
 
 .changing {
   background-color: var(--changing-color);
+  transition: 1s ease-out;
 }
 
 .modified {
   background-color: var(--modified-color);
+  transition: 1s ease-outs;
 }
