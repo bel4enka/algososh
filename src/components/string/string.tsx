@@ -5,8 +5,9 @@ import {Button} from "../ui/button/button";
 import styles from './string.module.css'
 import {ElementStates} from "../../types/element-states";
 import {Circle} from "../ui/circle/circle";
-import {pause, swap} from "../../utils";
+import {pause} from "../../utils";
 import {DELAY_IN_MS} from "../../constants/delays";
+import {reversString} from "./utils";
 
 export type TInputStringArr = {
     index: number
@@ -22,8 +23,7 @@ export const StringComponent: React.FC = () => {
     const handleInput = (e: SyntheticEvent<HTMLInputElement>) => {
         setInputString(e.currentTarget.value)
     }
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault()
+    const handleClick = async () => {
         const inputStringArr = inputString.split('').map((item, i) => {
             return {
                 index: i,
@@ -31,55 +31,39 @@ export const StringComponent: React.FC = () => {
                 status: ElementStates.Default
             }
         })
+        
         await moveElement(inputStringArr)
+    }
+    
+    const changeStatus = async (arr: TInputStringArr[], status: ElementStates, startIndex: number, endIndex: number) => {
+        arr[startIndex].status = status
+        
+        if(endIndex) {
+            arr[endIndex].status = status
+        }
+        setArr([...arr])
+        await pause(DELAY_IN_MS)
     }
     
     async function moveElement(arr: TInputStringArr[]) {
         setMove(true)
-  
-        for (let start = 0, end = arr.length - 1; start <= end; start++, end--) {
-            if (end === start) {
-                arr[start].status = ElementStates.Modified;
-                setArr([...arr]);
-                
-                await pause(DELAY_IN_MS);
-                
-                setMove(false);
-            }
-            else {
-                setArr([...arr]);
-                await pause(DELAY_IN_MS);
-                
-                arr[start].status = ElementStates.Changing;
-                arr[end].status = ElementStates.Changing;
-                setArr([...arr]);
-                
-                await pause(DELAY_IN_MS);
-                
-                swap(arr, start, end);
-                arr[start].status = ElementStates.Modified;
-                arr[end].status = ElementStates.Modified;
-                setArr([...arr]);
-                
-                await pause(DELAY_IN_MS);
-            }
-        }
-        setMove(false);
-        
+        await reversString(arr, changeStatus, ElementStates.Changing, ElementStates.Modified)
+        setMove(false)
     }
     
   return (
     <SolutionLayout title="Строка">
-        <form className={styles.form} onSubmit={handleSubmit}>
+        <form className={styles.form} >
             <Input
                 onChange={(e) => handleInput(e) }
                 isLimitText={true} 
                 maxLength={11} 
             />
             <Button text="Развернуть" 
-                    type="submit" 
+                    type="button" 
                     isLoader={startMove}
                     disabled={inputString === ''}
+                    onClick={handleClick}
             />
         </form>
         <div className={styles.circle}>
