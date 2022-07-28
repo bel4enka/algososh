@@ -50,31 +50,6 @@ exports[`Тестирование компонента Circle Circle c букв�
 </div>
 `;
 
-exports[`Тестирование компонента Circle Circle isSmall ===  true 1`] = `
-<div
-  className="content "
->
-  <div
-    className="text text_type_input text_color_input mb-4 absolute head element"
-  />
-  <div
-    className="circle   default"
-  >
-    <p
-      className="text text_type_circle text_color_input letter"
-    />
-  </div>
-  <p
-    className="text text_type_input text_color_input mt-4 absolute index"
-  >
-    0
-  </p>
-  <div
-    className="text text_type_input text_color_input mt-4 absolute tail60 element"
-  />
-</div>
-`;
-
 exports[`Тестирование компонента Circle Circle без буквы 1`] = `
 <div
   className="content "
@@ -87,9 +62,7 @@ exports[`Тестирование компонента Circle Circle без бу
   >
     <p
       className="text text_type_circle text_color_input letter"
-    >
-      
-    </p>
+    />
   </div>
   <p
     className="text text_type_input text_color_input mt-4 absolute index"
@@ -227,9 +200,7 @@ exports[`Тестирование компонента Circle Circle с head 1`]
   >
     <p
       className="text text_type_circle text_color_input letter"
-    >
-      Test
-    </p>
+    />
   </div>
   <p
     className="text text_type_input text_color_input mt-4 absolute index"
@@ -423,31 +394,6 @@ exports[`Тестирование компонента Circle Circle с react-э
 `;
 
 exports[`Тестирование компонента Circle Circle с tail 1`] = `
-<div
-  className="content "
->
-  <div
-    className="text text_type_input text_color_input mb-4 absolute head element"
-  />
-  <div
-    className="circle   default"
-  >
-    <p
-      className="text text_type_circle text_color_input letter"
-    >
-      Test
-    </p>
-  </div>
-  <p
-    className="text text_type_input text_color_input mt-4 absolute index"
-  />
-  <div
-    className="text text_type_input text_color_input mt-4 absolute tail30 element"
-  />
-</div>
-`;
-
-exports[`Тестирование компонента Circle Circle с tail 2`] = `
 <div
   className="content "
 >
