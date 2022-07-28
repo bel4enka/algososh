@@ -381,7 +381,7 @@ export const ListPage: React.FC = () => {
             onChange={(e) => setInputIndex(Number(e.currentTarget.value))}
             type='number'
             placeholder='Введите индекс'
-            value={inputIndex}
+            // value={inputIndex}
             extraClass={styles.input}
           />
           

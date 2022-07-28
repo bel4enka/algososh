@@ -1,7 +1,7 @@
-const host = 'http://localhost:3001'
+import {host} from "./availableApp";
 
-describe('pages available to visit', () => {
-    before('main page', () => {
+describe('Роутинг', () => {
+    before('Приложение работает', () => {
         cy.visit(host);
     });
 
