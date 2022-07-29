@@ -8,7 +8,7 @@ import {fibArr, pause} from "../../utils";
 import {SHORT_DELAY_IN_MS} from "../../constants/delays";
 
 export const FibonacciPage: React.FC = () => {
-  const [inputString, setInputString] = useState<number>(0)
+  const [inputString, setInputString] = useState<number>(Number(''))
   const [startShow, setShow] = useState<boolean>(false)
   const [arr, setArr] = useState<number[]>([])
 
@@ -42,7 +42,7 @@ export const FibonacciPage: React.FC = () => {
             type="number"
             max={19}
         />
-        <Button text="Рассчитать" type="submit" isLoader={startShow} disabled={inputString < 0}/>
+        <Button text="Рассчитать" type="submit" isLoader={startShow} disabled={inputString < 0 || !inputString}/>
       </form>
       <div className={styles.circle}>
         {arr.map((item, i) => {
