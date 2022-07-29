@@ -17,12 +17,6 @@ const dellElement = (name) => {
     })
     
 }
-// const checkButton = (name) => {
-//     //cy.get('button').eq(1).should('have.class', 'button_loader')
-//     cy.get('button').each((el, index) => {
-//         wrap(el).contain(name)
-//     })
-// }
 
 const firstName = 'a'
 const secondName = 'b'
